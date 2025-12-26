@@ -360,7 +360,7 @@ async function authenticate(req, res, next) {
 			return res.status(401).json({ message: 'Unauthorized' });
 		}
 
-		req.user = user;
+		req.user = user._doc;
 		next();
 	} catch (e) {
 		return res.status(400).json({ message: 'Invalid Token' });
